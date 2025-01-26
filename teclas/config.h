@@ -91,4 +91,17 @@ void modo_gravacao()
     reset_usb_boot(0, 0); // Ativa o modo de gravação (bootloader)
 }
 
+// Função para apagar todos os LEDs da matriz
+void apagar_leds(PIO pio, uint sm)
+{
+    // Defina a cor "apagado" (preto) para todos os LEDs
+    uint32_t cor_apagada = matrix_rgb(0.0, 0.0, 0.0);
+    
+    // Envie a cor apagada para todos os LEDs da matriz
+    for (int i = 0; i < NUM_PIXELS; i++)
+    {
+        pio_sm_put_blocking(pio, sm, cor_apagada); // Envia o valor da cor apagada
+    }
+}
+
 #endif // Fim da diretiva de inclusão

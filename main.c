@@ -11,6 +11,7 @@
 #include "pio_matrix.pio.h"
 
 #include "teclas/tecla1.h"
+#include "teclas/tecla3.h"
 
 #define NUM_PIXELS 25
 #define OUT_PIN 7
@@ -18,8 +19,6 @@
 // botões de interupção
 const uint button;
 
-#define NUM_PIXELS 25
-#define OUT_PIN 7
 
 // Definindo pinos das linhas e colunas do teclado matricial
 #define R1 9
@@ -156,6 +155,11 @@ int main()
     {
       printf("Exibindo os rostos e suas emoções\n");
       animacao_rostos(pio, sm);
+    }
+    else if (tecla == '3')
+    {
+      printf("Exibindo animação de chamas\n");
+      animacao_chama(pio, sm);
     }
     else
     {
