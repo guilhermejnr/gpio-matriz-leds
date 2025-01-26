@@ -158,8 +158,8 @@ int main()
     }
     else if (tecla == '3')
     {
-      printf("Exibindo animação de chamas\n");
-      animacao_chama(pio, sm, INTENSIDADE_BAIXA);
+      printf("Exibindo animação de snake\n");
+      animacao_snake(pio, sm, INTENSIDADE_MEDIA);
     }
     else
     {
