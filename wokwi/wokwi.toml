@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = '../build/gpio-matriz-leds.uf2'
+elf = '../gpio-matriz-leds.elf'
