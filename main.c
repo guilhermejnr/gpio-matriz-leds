@@ -154,12 +154,12 @@ int main()
     else if (tecla == '1')
     {
       printf("Exibindo os rostos e suas emoções\n");
-      animacao_rostos(pio, sm);
+      animacao_rostos(pio, sm, INTENSIDADE_MEDIA);
     }
     else if (tecla == '3')
     {
       printf("Exibindo animação de chamas\n");
-      animacao_chama(pio, sm);
+      animacao_chama(pio, sm, INTENSIDADE_BAIXA);
     }
     else
     {
