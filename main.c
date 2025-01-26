@@ -11,6 +11,7 @@
 #include "pio_matrix.pio.h"
 
 #include "teclas/tecla1.h"
+#include "teclas/tecla2.h"
 #include "teclas/tecla3.h"
 
 #define NUM_PIXELS 25
@@ -155,6 +156,11 @@ int main()
     {
       printf("Exibindo os rostos e suas emoções\n");
       animacao_rostos(pio, sm, INTENSIDADE_MEDIA);
+    }
+    else if (tecla == '2')
+    {
+      printf("Exibindo animação de ondas\n");
+      animacao_onda(pio, sm, INTENSIDADE_MEDIA)
     }
     else if (tecla == '3')
     {
