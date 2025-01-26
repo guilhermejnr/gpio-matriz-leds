@@ -1,23 +1,22 @@
 {
   "version": 1,
-  "author": "Luiz Gustavo do Valle",
+  "author": "Otiliano, Lucas e Guilherme",
   "editor": "wokwi",
   "parts": [
     {
       "type": "board-pi-pico-w",
       "id": "pico",
       "top": 83.15,
-      "left": 99.55,
+      "left": 185.95,
       "attrs": { "builder": "pico-sdk" }
     },
     {
-      "type": "wokwi-buzzer",
-      "id": "bz1",
-      "top": -45.6,
-      "left": 193.8,
-      "attrs": { "volume": "0.1" }
+      "type": "wokwi-membrane-keypad",
+      "id": "keypad1",
+      "top": -357.2,
+      "left": -32.8,
+      "attrs": {}
     },
-    { "type": "wokwi-membrane-keypad", "id": "keypad1", "top": -386, "left": -71.2, "attrs": {} },
     { "type": "wokwi-neopixel", "id": "rgb2", "top": 73.3, "left": -183.4, "attrs": {} },
     { "type": "wokwi-neopixel", "id": "rgb3", "top": -3.5, "left": -413.8, "attrs": {} },
     { "type": "wokwi-neopixel", "id": "rgb4", "top": 73.3, "left": -404.2, "attrs": {} },
@@ -57,8 +56,6 @@
   "connections": [
     [ "pico:GP0", "$serialMonitor:RX", "", [] ],
     [ "pico:GP1", "$serialMonitor:TX", "", [] ],
-    [ "pico:GP21", "bz1:2", "green", [ "h77.11", "v-57.6" ] ],
-    [ "pico:GND.6", "bz1:1", "black", [ "h0" ] ],
     [ "pico:GP7", "rgb2:DIN", "green", [ "h0" ] ],
     [ "rgb2:DOUT", "rgb26:DIN", "green", [ "h-19.2", "v-10.5" ] ],
     [ "rgb26:DOUT", "rgb6:DIN", "green", [ "h-19.2", "v-10.5" ] ],
@@ -136,14 +133,14 @@
     [ "rgb22:VDD", "vcc5:VCC", "green", [ "h0", "v-28.8" ] ],
     [ "pico:GP0", "$serialMonitor:RX", "", [] ],
     [ "pico:GP1", "$serialMonitor:TX", "", [] ],
-    [ "keypad1:C4", "pico:GP2", "green", [ "v0" ] ],
-    [ "keypad1:C3", "pico:GP3", "green", [ "v0" ] ],
-    [ "keypad1:C2", "pico:GP4", "green", [ "v0" ] ],
-    [ "keypad1:C1", "pico:GP5", "green", [ "v0" ] ],
-    [ "keypad1:R4", "pico:GP6", "green", [ "v0" ] ],
-    [ "keypad1:R2", "pico:GP8", "green", [ "v0" ] ],
-    [ "keypad1:R1", "pico:GP9", "green", [ "v0" ] ],
-    [ "keypad1:R3", "pico:GP10", "green", [ "v0" ] ]
+    [ "keypad1:C4", "pico:GP2", "orange", [ "v0" ] ],
+    [ "keypad1:C3", "pico:GP3", "orange", [ "v0" ] ],
+    [ "keypad1:C2", "pico:GP4", "orange", [ "v0" ] ],
+    [ "keypad1:C1", "pico:GP5", "orange", [ "v0" ] ],
+    [ "keypad1:R4", "pico:GP6", "orange", [ "v0" ] ],
+    [ "keypad1:R2", "pico:GP8", "orange", [ "v0" ] ],
+    [ "keypad1:R1", "pico:GP9", "orange", [ "v0" ] ],
+    [ "keypad1:R3", "pico:GP10", "orange", [ "v0" ] ]
   ],
   "dependencies": {}
 }

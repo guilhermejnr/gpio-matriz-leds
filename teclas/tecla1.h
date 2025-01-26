@@ -65,6 +65,9 @@ void animacao_rostos(PIO pio, uint sm)
         imprimir_desenho(pio, sm, frames[i]);
         sleep_ms(500);
     }
+
+    // Apaga os LEDs após a animação
+    apagar_leds(pio, sm);
 }
 
 #endif
