@@ -10,7 +10,7 @@
 //arquivo .pio
 #include "pio_matrix.pio.h"
 
-#include"tecla1.h"
+#include"teclas/tecla1.h"
 
 
 #define NUM_PIXELS 25
