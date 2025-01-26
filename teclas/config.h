@@ -44,7 +44,7 @@ void controlar_leds(PIO pio, uint sm, uint32_t cor)
 }
 
 // Função para imprimir um desenho na matriz de LEDs
-void imprimir_desenho(PIO pio, uint sm, Matriz_leds_config configuracao)
+void imprimir_desenho(PIO pio, uint sm, Matriz_leds_config configuracao, double intensidade)
 {
     // Percorre as linhas da matriz de LEDs de baixo para cima
     for (int contadorLinha = 4; contadorLinha >= 0; contadorLinha--)
@@ -55,9 +55,9 @@ void imprimir_desenho(PIO pio, uint sm, Matriz_leds_config configuracao)
             for (int contadorColuna = 0; contadorColuna < 5; contadorColuna++)
             {
                 uint32_t valor_cor_binario = matrix_rgb(
-                    configuracao[contadorLinha][contadorColuna].blue, // Obtém a cor azul
-                    configuracao[contadorLinha][contadorColuna].red,  // Obtém a cor vermelha
-                    configuracao[contadorLinha][contadorColuna].green // Obtém a cor verde
+                    configuracao[contadorLinha][contadorColuna].blue * intensidade, // Aplica intensidade ao azul
+                    configuracao[contadorLinha][contadorColuna].red * intensidade,  // Aplica intensidade ao vermelho
+                    configuracao[contadorLinha][contadorColuna].green * intensidade // Aplica intensidade ao verde
                 );
                 pio_sm_put_blocking(pio, sm, valor_cor_binario); // Envia a cor para o LED correspondente
             }
@@ -68,9 +68,9 @@ void imprimir_desenho(PIO pio, uint sm, Matriz_leds_config configuracao)
             for (int contadorColuna = 4; contadorColuna >= 0; contadorColuna--)
             {
                 uint32_t valor_cor_binario = matrix_rgb(
-                    configuracao[contadorLinha][contadorColuna].blue,
-                    configuracao[contadorLinha][contadorColuna].red,
-                    configuracao[contadorLinha][contadorColuna].green);
+                    configuracao[contadorLinha][contadorColuna].blue * intensidade,
+                    configuracao[contadorLinha][contadorColuna].red * intensidade,
+                    configuracao[contadorLinha][contadorColuna].green * intensidade);
                 pio_sm_put_blocking(pio, sm, valor_cor_binario); // Envia a cor para o LED correspondente
             }
         }

@@ -11,7 +11,7 @@
 #include "pico/bootrom.h"
 #include "config.h"
 
-void animacao_chama(PIO pio, uint sm)
+void animacao_chama(PIO pio, uint sm, float intensidade)
 {
     // Sequência de frames
     Matriz_leds_config frames[] = {
@@ -57,7 +57,7 @@ void animacao_chama(PIO pio, uint sm)
     // Controlar animações de 1 a 5
     for (int i = 0; i < 5; i++)
     {
-        imprimir_desenho(pio, sm, frames[i]);
+        imprimir_desenho(pio, sm, frames[i], intensidade);
         sleep_ms(500);
     }
 
