@@ -12,6 +12,7 @@
 
 #include "teclas/tecla1.h"
 #include "teclas/tecla3.h"
+#include "teclas/tecla4.h"
 
 #define NUM_PIXELS 25
 #define OUT_PIN 7
@@ -161,6 +162,11 @@ int main()
       printf("Exibindo animação de chamas\n");
       animacao_chama(pio, sm, INTENSIDADE_BAIXA);
     }
+    else if (tecla == '4')
+{
+    printf("Exibindo animação da cruz de malta\n");
+    animacao_malta_cruz(pio, sm, INTENSIDADE_MEDIA);
+}
     else
     {
       printf("%c", tecla);
