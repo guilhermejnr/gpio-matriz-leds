@@ -160,7 +160,7 @@ int main()
     else if (tecla == '2')
     {
       printf("Exibindo animação de ondas\n");
-      animacao_onda(pio, sm, INTENSIDADE_MEDIA)
+      animacao_onda(pio, sm, INTENSIDADE_MEDIA);
     }
     else if (tecla == '3')
     {
