@@ -23,7 +23,7 @@ O sistema responde aos seguintes comandos do teclado matricial:
 ### Animações Personalizadas (Teclas 0-4)
 - **Tecla 1**: Animação de rostos com diferentes expressões
 - **Tecla 2**: Animação de onda crescente em azul
-- **Tecla 3**: Animação jogo Snake com cores alternadas
+- **Tecla 3**: Animação jogo Snake com cores alternadas + (Buzzer)
 - **Tecla 4**: Animação da Cruz de Malta com cores alternadas
 
 ### Controles de LED (Teclas Especiais)
@@ -39,12 +39,14 @@ O sistema responde aos seguintes comandos do teclado matricial:
 - **GPIO 7**: Controle da matriz de LEDs WS2812
 - **GPIOs 9, 8, 10, 6**: Linhas do teclado matricial
 - **GPIOs 5, 4, 3, 2**: Colunas do teclado matricial
+- **GPIO 21**: Controle do Buzzer A
 
 ### Software
 - `main.c`: Arquivo principal com inicialização e loop de controle
 - `config.h`: Configurações e funções auxiliares
 - `tecla1.h` - `tecla4.h`: Implementações das diferentes animações
 - `pio_matrix.pio`: Código PIO para controle dos LEDs WS2812
+- `buzzer.h`: Código para controle do Buzzer A
 
 ## Como Usar
 1. **Clone o repositório**:
