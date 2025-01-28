@@ -64,6 +64,7 @@ target_link_libraries(gpio-matriz-leds
     pico_stdlib
     hardware_pio
     hardware_adc
+    hardware_pwm
 )
 
 # Criar arquivos de saída como mapa/bin/hex, etc.

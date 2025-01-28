@@ -51,7 +51,14 @@
     { "type": "wokwi-gnd", "id": "gnd3", "top": 38.4, "left": -442.2, "attrs": {} },
     { "type": "wokwi-vcc", "id": "vcc5", "top": -268.04, "left": -134.4, "attrs": {} },
     { "type": "wokwi-gnd", "id": "gnd4", "top": -182.4, "left": -135, "attrs": {} },
-    { "type": "wokwi-gnd", "id": "gnd5", "top": -96, "left": -451.8, "attrs": {} }
+    { "type": "wokwi-gnd", "id": "gnd5", "top": -96, "left": -451.8, "attrs": {} },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 50.4,
+      "left": 328.2,
+      "attrs": { "volume": "0.1" }
+    }
   ],
   "connections": [
     [ "pico:GP0", "$serialMonitor:RX", "", [] ],
@@ -140,7 +147,9 @@
     [ "keypad1:R4", "pico:GP6", "orange", [ "v0" ] ],
     [ "keypad1:R2", "pico:GP8", "orange", [ "v0" ] ],
     [ "keypad1:R1", "pico:GP9", "orange", [ "v0" ] ],
-    [ "keypad1:R3", "pico:GP10", "orange", [ "v0" ] ]
+    [ "keypad1:R3", "pico:GP10", "orange", [ "v0" ] ],
+    [ "bz1:1", "pico:GND.6", "black", [ "v0" ] ],
+    [ "bz1:2", "pico:GP21", "red", [ "v0" ] ]
   ],
   "dependencies": {}
 }

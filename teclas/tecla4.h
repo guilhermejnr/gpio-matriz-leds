@@ -89,6 +89,8 @@ void animacao_malta_cruz(PIO pio, uint sm, float intensidade) {
             sleep_ms(300);  // Frame duration
         }
     }
+    // Apaga os LEDs após a animação
+    apagar_leds(pio, sm);
 }
 
 #endif // TECLA4_H
