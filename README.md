@@ -13,6 +13,7 @@ Este repositório contém o código para controlar uma matriz de LEDs 5x5 (WS281
 - Raspberry Pi Pico W
 - Matriz de LEDs WS2812 5x5
 - Teclado Matricial 4x4
+- Buzzer
 - Cabo micro-USB para USB-A
 - Computador com VS Code e configuração de Pico SDK
 
@@ -22,7 +23,7 @@ O sistema responde aos seguintes comandos do teclado matricial:
 ### Animações Personalizadas (Teclas 0-4)
 - **Tecla 1**: Animação de rostos com diferentes expressões
 - **Tecla 2**: Animação de onda crescente em azul
-- **Tecla 3**: Animação de chama em vermelho e amarelo
+- **Tecla 3**: Animação jogo Snake com cores alternadas
 - **Tecla 4**: Animação da Cruz de Malta com cores alternadas
 
 ### Controles de LED (Teclas Especiais)

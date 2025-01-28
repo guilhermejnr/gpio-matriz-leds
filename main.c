@@ -7,6 +7,8 @@
 #include "hardware/adc.h"
 #include "pico/bootrom.h"
 
+#include "buzzer/buzzer.h"
+
 // arquivo .pio
 #include "pio_matrix.pio.h"
 
@@ -17,6 +19,7 @@
 
 #define NUM_PIXELS 25
 #define OUT_PIN 7
+#define BUZZER_A 21
 
 // botões de interupção
 const uint button;
@@ -103,6 +106,7 @@ int main()
 
   init_teclado();
   stdio_init_all();
+  buzzer_init();
 
   printf("Iniciando o controle dos LEDs\n");
 
