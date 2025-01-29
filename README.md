@@ -75,7 +75,7 @@ O sistema responde aos seguintes comandos do teclado matricial:
    - Copie o arquivo .uf2 gerado para o dispositivo
 
 ## Vídeo de Demonstração
-[Link para o vídeo de demonstração]
+[\[Link para o vídeo de demonstração\]](https://drive.google.com/file/d/15D8AR-Lq1DiYIA_FVp7R1OOkwUbnJnWE/view?usp=sharing)
 
 ## Contribuições
 Sinta-se à vontade para contribuir com o projeto através de pull requests. Para contribuir:
