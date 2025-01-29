@@ -17,6 +17,7 @@
 
 #define NUM_PIXELS 25
 #define OUT_PIN 7
+#define BUZZER_A 21
 
 // botões de interrupção
 const uint button;
@@ -102,6 +103,7 @@ int main()
 
   init_teclado();
   stdio_init_all();
+  buzzer_init();
 
   printf("Iniciando o controle dos LEDs\n");
 
@@ -164,8 +166,8 @@ int main()
     }
     else if (tecla == '3')
     {
-      printf("Exibindo animação de chamas\n");
-      animacao_chama(pio, sm, INTENSIDADE_BAIXA);
+      printf("Exibindo animação de snake\n");
+      animacao_snake(pio, sm, INTENSIDADE_MEDIA);
     }
     else if (tecla == '4')
     {

@@ -4,24 +4,16 @@
 #include <stdio.h>
 #include "pico/stdlib.h"
 #include "hardware/pio.h"
+#include "config.h"
 
 // Função para converter valores RGB para formato PIO
-uint32_t converter_cor(float r, float g, float b)
+uint32_t converter_color(float r, float g, float b)
 {
   uint32_t cor =
       ((uint32_t)(r * 255) << 16) |
       ((uint32_t)(g * 255) << 8) |
       ((uint32_t)(b * 255));
   return cor;
-}
-
-// Função para apagar os LEDs
-void apagar_leds(PIO pio, uint sm)
-{
-  for (int i = 0; i < 25; i++)
-  {
-    pio_sm_put_blocking(pio, sm, converter_cor(0.0, 0.0, 0.0));
-  }
 }
 
 // Animação para padrão de expansão e contração de quadrado
@@ -84,7 +76,7 @@ void animacao_quadrado_expansivo(PIO pio, uint sm, float intensidade)
       {
         if (quadrado_frames[frame][i])
         {
-          uint32_t cor = converter_cor(
+          uint32_t cor = converter_color(
               colors[frame][0] * intensidade,
               colors[frame][1] * intensidade,
               colors[frame][2] * intensidade);
@@ -92,7 +84,7 @@ void animacao_quadrado_expansivo(PIO pio, uint sm, float intensidade)
         }
         else
         {
-          uint32_t cor = converter_cor(0.0, 0.0, 0.0);
+          uint32_t cor = converter_color(0.0, 0.0, 0.0);
           pio_sm_put_blocking(pio, sm, cor);
         }
       }
