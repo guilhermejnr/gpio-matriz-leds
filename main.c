@@ -7,23 +7,19 @@
 #include "hardware/adc.h"
 #include "pico/bootrom.h"
 
-#include "buzzer/buzzer.h"
-
 // arquivo .pio
 #include "pio_matrix.pio.h"
 
 #include "teclas/tecla1.h"
-#include "teclas/tecla2.h"
 #include "teclas/tecla3.h"
 #include "teclas/tecla4.h"
+#include "teclas/tecla0.h"
 
 #define NUM_PIXELS 25
 #define OUT_PIN 7
-#define BUZZER_A 21
 
-// botões de interupção
+// botões de interrupção
 const uint button;
-
 
 // Definindo pinos das linhas e colunas do teclado matricial
 #define R1 9
@@ -106,7 +102,6 @@ int main()
 
   init_teclado();
   stdio_init_all();
-  buzzer_init();
 
   printf("Iniciando o controle dos LEDs\n");
 
@@ -157,26 +152,26 @@ int main()
       printf("Saindo do modo de execução e habilitando o modo de gravação\n");
       modo_gravacao();
     }
+    else if (tecla == '0')
+    {
+      printf("Exibindo animação quadrado expansivo\n");
+      animacao_quadrado_expansivo(pio, sm, INTENSIDADE_ALTA);
+    }
     else if (tecla == '1')
     {
       printf("Exibindo os rostos e suas emoções\n");
       animacao_rostos(pio, sm, INTENSIDADE_MEDIA);
     }
-    else if (tecla == '2')
-    {
-      printf("Exibindo animação de ondas\n");
-      animacao_onda(pio, sm, INTENSIDADE_MEDIA);
-    }
     else if (tecla == '3')
     {
-      printf("Exibindo animação de snake\n");
-      animacao_snake(pio, sm, INTENSIDADE_MEDIA);
+      printf("Exibindo animação de chamas\n");
+      animacao_chama(pio, sm, INTENSIDADE_BAIXA);
     }
     else if (tecla == '4')
-{
-    printf("Exibindo animação da cruz de malta\n");
-    animacao_malta_cruz(pio, sm, INTENSIDADE_MEDIA);
-}
+    {
+      printf("Exibindo animação da cruz de malta\n");
+      animacao_malta_cruz(pio, sm, INTENSIDADE_MEDIA);
+    }
     else
     {
       printf("%c", tecla);
